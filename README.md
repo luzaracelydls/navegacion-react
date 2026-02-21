@@ -13,7 +13,8 @@ Creat navegación en React
 1. Crear archivo plantilla.js
 2. Crear archivo detalle.js
 
-En layout.js
+En layout.js:
+```
 import { Stack } from 'expo-router';
  
 export default function Plantilla(){
@@ -32,6 +33,7 @@ return(
 }
 ```
 En detalle.js
+```
 import { Stack } from 'expo-router';
 
 export default function Detalle(){
@@ -45,3 +47,4 @@ return(
 </View>
 )
 }
+```
