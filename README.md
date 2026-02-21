@@ -34,10 +34,12 @@ return(
 ```
 En detalle.js
 ```
+import { View, Text } from 'react-native';
 import { Stack } from 'expo-router';
 
 export default function Detalle(){
 return(
+<>
 <Stack.Screen options={{title: 'Vista de detalle'}}/>
 
 
@@ -45,6 +47,7 @@ return(
 <View>
  <Text>Detalle</Text>
 </View>
+</>
 )
 }
 ```
