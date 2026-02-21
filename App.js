@@ -1,11 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Pressable} from 'react-native';
+import { useRouter } from 'expo-router';
 
 export default function App() {
+  const ruta = useRouter();
+
   return (
+
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+     <Pressable onPress={() => ruta.push('/detalle')}>
+      <Text>Ir a la vista detalle</Text>
+     </Pressable>
     </View>
   );
 }
