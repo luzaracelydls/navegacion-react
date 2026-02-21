@@ -1,12 +1,24 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View, Pressable} from 'react-native';
+import { useRouter } from 'expo-router';
 
-export default function Page() {
+
+export default function App() {
+  const ruta = useRouter();
+  const listaRutas = [
+    { id: 1, title: "React Native" },
+    { id: 2, title: "Expo Router" },
+    { id: 3, title: "JavaScript" },
+    { id: 4, title: "Arquitectura" },
+    { id: 5, title: "Proyecto Final" },
+  ];
+
   return (
+
     <View style={styles.container}>
-      <View style={styles.main}>
-        <Text style={styles.title}>Hello World</Text>
-        <Text style={styles.subtitle}>This is the first page of your app.</Text>
-      </View>
+     <Pressable onPress={() => ruta.push('/detalle')}>
+      <Text>Ir a la vista detalle</Text>
+     </Pressable>
     </View>
   );
 }
@@ -14,21 +26,8 @@ export default function Page() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
-    padding: 24,
-  },
-  main: {
-    flex: 1,
-    justifyContent: "center",
-    maxWidth: 960,
-    marginHorizontal: "auto",
-  },
-  title: {
-    fontSize: 64,
-    fontWeight: "bold",
-  },
-  subtitle: {
-    fontSize: 36,
-    color: "#38434D",
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });

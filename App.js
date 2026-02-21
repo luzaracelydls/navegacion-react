@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Pressable} from 'react-native';
 import { useRouter } from 'expo-router';
 
+
 export default function App() {
   const ruta = useRouter();
 
