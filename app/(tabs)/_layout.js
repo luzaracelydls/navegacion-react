@@ -9,7 +9,8 @@ export default function TabLayout() {
             <Tabs.Screen name="buscar" options={{ titulo: 'Buscar' }} />
             <Tabs.Screen name="perfil" options={{ 
                 titulo: 'Perfil', 
-                tabBarIcon: ({ color }) => <FontAwesome size={28} name="user" color={color} />
+                tabBarIcon: ({ color }) => <FontAwesome size={28} name="user" color={color} />,
+                params: {mensaje: 'holaMundo'}
             
             }}
             />   
