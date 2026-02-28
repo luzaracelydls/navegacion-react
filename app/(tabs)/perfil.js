@@ -1,7 +1,9 @@
-import { View, Text } from "react-native";
+import {View, Text} from 'react-native';
 
-import { useLocalSearchParams } from 'expo-router';
-
-export default function Perfil() {
-    
+export default function Perfil(){
+    return(
+        <View>
+            <Text>Perfil</Text>
+        </View>
+    )
 }

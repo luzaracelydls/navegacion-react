@@ -1,11 +1,12 @@
+import { Tabs } from "expo-router";
 
-import { Tabs } from 'expo-router';
-
-export default function TabLayout() {
+export default function Layout(){
     return(
-        <Tabs screenOptions={{ tabBarActiveTintColor: 'blue' }}>
-
-           
+        <Tabs screenOptions={ {tabBarActiveTintColor: '#453823'}}
+        >
+            <Tabs.Screen name="perfil"></Tabs.Screen>
+            <Tabs.Screen name="buscar"></Tabs.Screen>
+            <Tabs.Screen name="config"></Tabs.Screen>
         </Tabs>
     )
 }

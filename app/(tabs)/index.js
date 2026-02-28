@@ -1,4 +1,9 @@
+import {View, Text} from 'react-native';
 
-export default function Inicio() {
- 
+export default function Index() {
+    return(
+        <View>
+            <Text>Inicio</Text>
+        </View>
+    )
 }
