@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Pressable} from 'react-native';
+import { StyleSheet, Text, View, Pressable, Button, ScrollView} from 'react-native';
 import { useRouter } from 'expo-router';
 
 
@@ -15,19 +15,16 @@ export default function App() {
     
     return (
         
-        <View style={styles.container}>
-        {
-            listaRutas.map((rutaItem) => (
-                <Pressable onPress={() => ruta.push({
-                    pathname:'/detalle',
-                    params: { title: rutaItem.title, id: rutaItem.id}
-                })}>
-                <Text>Ir a la vista detalle de {rutaItem.title}</Text>
-                </Pressable>
-            ))
-        }
+        <ScrollView contentContainerStyle={{ flexGrow: 1, justifyContent: 'center', alignItems: 'space-between' }}>
         
+        
+        <View style={styles.botones}>
+            <Pressable style={styles.boton} onPress={() => ruta.push({pathname:'/perfil', params: { titulo: 'Perfil'}})}><Text>Pestaña 1</Text></Pressable>
+            <Pressable style={styles.boton} onPress={() => ruta.push({pathname:'/buscar', params: { titulo: 'Buscar'}})}><Text>Pestaña 2</Text></Pressable>
+            <Pressable style={styles.boton} onPress={() => ruta.push({pathname:'/config', params: { titulo: 'Configuración'}})}><Text>Pestaña 3</Text></Pressable>
         </View>
+        
+        </ScrollView>
     );
 }
 
@@ -36,6 +33,18 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#fff',
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'flex-end',
     },
+    botones:{
+        flex: 1,
+        flexDirection: 'row',
+        alignItems: 'flex-end',
+        justifyContent: 'space-between',
+    },
+    boton:{
+        textAlign:'center',
+       
+        padding: 20,
+        borderRadius: 10,
+    }
 });
