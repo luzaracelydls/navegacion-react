@@ -1,6 +1,6 @@
 import { FlatList, Text, View } from "react-native";
 import { useEffect, useState } from "react";
-import {List} from 'react-native-paper';
+import {List, TouchableRipple} from 'react-native-paper';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 
 
@@ -300,13 +300,22 @@ export default function Alumnos(){
     }
     
     return(
-       
+
+        //Op 1
         <FlatList
             data={alumnos}
             keyExtractor={(item) => item.matricula}
             renderItem={({item}) => (
-                 <><List.Item title={item.nombre} left={props => <MaterialIcons name="account-circle" size={40}></MaterialIcons>}></List.Item></>
+                 <>
+                 <TouchableRipple onPress={() => console.log(item.nombre)}>
+                    <List.Item title={item.nombre} left={props => <MaterialIcons name="account-circle" size={40}></MaterialIcons>}></List.Item>
+                </TouchableRipple></>
             )}
         />
+
+        //Op 2: Map sin FlatList
+        // alumnos.map((alumno) => (
+        //     <List.Item key={alumno.matricula} title={alumno.nombre} left={props => <MaterialIcons name="account-circle" size={40}></MaterialIcons>}></List.Item>
+        // ))
     )
 }
