@@ -1,4 +1,8 @@
 
-export default function Inicio() {
- 
+import {Text} from 'react-native';
+
+export default function Index() {
+ return(
+    <Text>Indez</Text>
+ )
 }
